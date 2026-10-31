@@ -1,0 +1,43 @@
+{
+  "name": "hotiralar-muzeyi",
+  "version": "1.0.0",
+  "description": "Hotiralar muzeyi — desktop ilova",
+  "main": "main.cjs",
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "uz.hotiralar.muzeyi",
+    "productName": "Hotiralar muzeyi",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "main.cjs",
+      "three.min.js",
+      "musiqalalr/**/*",
+      "logo/**/*",
+      "icon.ico"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
